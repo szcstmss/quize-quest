@@ -1,0 +1,19 @@
+.loginCard{
+    background-color: aqua;
+    width: 15em;
+    height: 25em;
+    margin: auto;
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerDiv > *{
+    margin: 1em;
+}
+
+.innerDiv > div > button:first-child {
+    margin-right: 0.5em;
+}
+
