@@ -6,6 +6,7 @@ const LogOut = (props) => {
   async function logOut() {
     try {
       await signOut(auth);
+      props.logout()
     } catch (err) {
       console.error(err);
     }

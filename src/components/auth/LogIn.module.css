@@ -1,19 +1,81 @@
 .loginCard{
-    background-color: aqua;
-    width: 15em;
-    height: 25em;
+    background-color: white;
+    width: 20rem;
+    height: 25rem;
     margin: auto;
-    margin-top: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px blueviolet;
 }
 
 .innerDiv > *{
     margin: 1em;
 }
 
-.innerDiv > div > button:first-child {
-    margin-right: 0.5em;
+.inputDiv > input{
+    margin: 0.5rem;
+    font-size: medium;
+    border-radius: 20px;
+    text-indent: 1rem;
+    height: 2rem;
+    width: 17rem;
+    border: 1px solid blueviolet;
+    box-shadow: 2px 2px 2px blueviolet;
 }
 
+.inputDiv > input:focus{
+    outline: none;
+    border: 3px solid blueviolet;
+}
+
+.inputDiv > input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+
+}
+
+.buttonDiv{
+    margin-top: 1rem;
+    display: block;
+}
+
+
+.signInButton, .googleButton, .registerButton{
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    margin-bottom: 0.5rem;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+    font-size: larger;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px blueviolet;
+}
+
+.googleButton > img {
+    height: 1.4rem;
+    margin-right: 0.25rem;
+    position: relative;
+    background-color: blueviolet;
+
+}
+
+.innerDiv > h2{
+    color: blueviolet;
+    font-size: xx-large;
+
+}
+
+.errorDiv{
+    background-color: rgba(255, 99, 71, 0.618);
+    width: 17rem;
+    margin: auto;
+    height: 2rem;
+    color: red;
+}
+
+.errorDiv p{
+    vertical-align: middle;
+}
