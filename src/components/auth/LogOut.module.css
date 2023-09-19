@@ -1,0 +1,32 @@
+.logoutDiv{
+    background-color: white;
+    width: 25rem;
+    margin: auto;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 5%;
+    box-shadow: 4px 4px 4px blueviolet;
+}
+
+.logoutDiv > button{
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    margin-bottom: 0.5rem;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+    font-size: medium;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px blueviolet;
+}
+
+.logoutDiv > p{
+    font-size: larger;
+}
+
+.logoutDiv > button:hover{
+    cursor: pointer;
+    background-color: rgb(87, 28, 142);
+    
+}

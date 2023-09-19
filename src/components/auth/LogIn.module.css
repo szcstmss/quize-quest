@@ -8,6 +8,7 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 4px 4px 4px blueviolet;
+    margin-top: 10%;
 }
 
 .innerDiv > *{

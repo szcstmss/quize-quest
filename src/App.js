@@ -10,9 +10,12 @@ function App() {
 
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
+
   const logOutHandler = async () => {
     setIsUserLoggedIn(false);
   }
+
+  
 
   const userLogInStateListener = auth.onAuthStateChanged((user) => {
     {
@@ -23,6 +26,7 @@ function App() {
       }
     }
   });
+  
 
   return (
     <div className="App">

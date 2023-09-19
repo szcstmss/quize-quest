@@ -1,32 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { signOut } from "firebase/auth";
-import { auth, db } from "../config/firebase";
-import { getDocs, collection, onSnapshot } from "firebase/firestore";
-import style from "./StartScreen.module.css";
+import Records from "./start_game/Records";
 import LogOut from "./auth/LogOut";
+import StartGame from "./start_game/StartGame";
+import GameScreen from "./GameScreen";
 
 const StartScreen = (props) => {
-  // const [questions, setQuestions] = useState([]);
+  const [isInProgress, setIsInProgress] = useState(false);
+  const [length, setLength] = useState();
 
-  // const colRef = collection(db, "questions");
 
-  // useEffect(() => {
-  //     //READ THE DATA
-  //   getDocs(colRef).then((snapshot) => {
-  //       let questions = [];
-  //       snapshot.docs.forEach((doc) => {
-  //         questions.push({ ...doc.data(), id: doc.id });
-  //       });
-  //       setQuestions(questions)
-  //   }).catch(err => {console.error(err)});
-    
-  // }, []);
+  const gameStartHandler = (l) => {
+    setLength(l)
+    setIsInProgress(true)
+  }
 
-  
+
   return (
     <div>
-      <LogOut logout={props.logout} />
-          
+      {!isInProgress ? <div>
+        <LogOut logout={props.logout} />
+        <StartGame setLength={gameStartHandler} />
+        <Records />
+      </div> : <GameScreen gameLength={length} />}
     </div>
   );
 };

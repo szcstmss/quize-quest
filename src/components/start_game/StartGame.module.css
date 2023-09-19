@@ -1,0 +1,43 @@
+.startgameDiv{
+    background-color: white;
+    width: 25rem;
+    margin: auto;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    box-shadow: 4px 4px 4px blueviolet;
+}
+
+.selection > label{
+    font-size: large;
+    margin-left: 1rem;
+}
+
+.selection > label:hover{
+    font-size: larger;
+}
+
+.selection > input:hover{
+    height: 1rem;
+    width: 1rem;
+}
+
+
+.selection > button{
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px blueviolet;
+}
+
+ .selection > button:hover{
+    background-color: rgb(87, 28, 142);
+    cursor: pointer;
+} 
+

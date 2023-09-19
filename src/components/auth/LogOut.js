@@ -1,6 +1,7 @@
 import React from "react";
 import { auth } from '../../config/firebase';
 import { signOut } from "firebase/auth";
+import style from "./LogOut.module.css"
 
 const LogOut = (props) => {
   async function logOut() {
@@ -21,9 +22,9 @@ const LogOut = (props) => {
   });
 
   return (
-    <div>
-      <p>{auth?.currentUser?.email}</p>
-      <button onClick={logOut}>Sign Out</button>
+    <div className={style.logoutDiv} >
+      <p>Hello, {auth?.currentUser?.email.slice(0, auth?.currentUser?.email.indexOf('@'))}!</p>
+      <button onClick={logOut}>Kijelentkezés</button>
     </div>
   );
 };
