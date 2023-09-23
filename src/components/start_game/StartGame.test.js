@@ -2,8 +2,8 @@ import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import StartGame from "./StartGame";
 
-describe("StartGame komponens tesztje", () => {
-    it("Állapotváltozások tesztelése", () => {
+describe("StartGame Component Test", () => {
+    it("Testing State Changes", () => {
 
         render(<StartGame />);
 
@@ -27,14 +27,14 @@ describe("StartGame komponens tesztje", () => {
         expect(screen.getByLabelText("24")).toBeChecked();
     });
 
-    it("Űrlap elküldés tesztelése", () => {
+    it("Testing Form Submission", () => {
         const setLengthMock = jest.fn();
 
         render(<StartGame setLength={setLengthMock} />);
 
         fireEvent.click(screen.getByLabelText("6"));
 
-        fireEvent.click(screen.getByText("Indítás"));
+        fireEvent.click(screen.getByText("Start"));
 
         expect(setLengthMock).toHaveBeenCalledWith(6);
     });
