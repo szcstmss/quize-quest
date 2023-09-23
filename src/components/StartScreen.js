@@ -14,6 +14,10 @@ const StartScreen = (props) => {
     setIsInProgress(true)
   }
 
+  const backToStartHandler = () => {
+    setIsInProgress(false)
+  }
+
 
   return (
     <div>
@@ -21,7 +25,7 @@ const StartScreen = (props) => {
         <LogOut logout={props.logout} />
         <StartGame setLength={gameStartHandler} />
         <Records />
-      </div> : <GameScreen gameLength={length} />}
+      </div> : <GameScreen gameLength={length} backToStart={backToStartHandler} />}
     </div>
   );
 };

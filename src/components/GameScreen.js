@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import style from "./GameScreen.module.css";
 import { auth, db } from "../config/firebase";
-import { getDocs, collection, query, where, orderBy } from "firebase/firestore";
+import { getDocs, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import Game from "./game/Game";
+import GameEnd from "./game/GameEnd";
 
 const GameScreen = (props) => {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [hasEnded, setHasEnded] = useState(false)
 
-  const colRef = collection(db, "questions");
+  const questionsRef = collection(db, "questions");
   useEffect(() => {
     //READ THE DATA
     const getQuestions = async () => {
       try {
-        const data = await getDocs(colRef);
+        const data = await getDocs(questionsRef);
         const filteredData = data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
@@ -36,37 +39,42 @@ const GameScreen = (props) => {
     getQuestions();
   }, []);
 
-  const nextQuestion = () => {
-    
-  }
 
   const checkAnswer = (ans) => {
-    if(ans === questions[index].correctAns){
-        setScore((prevScore) => {return prevScore+1})
+    if (ans === questions[index].correctAns) {
+      setScore((prevScore) => { return prevScore + 1 })
     }
     increaseAndCheckIndex()
   }
 
-  const increaseAndCheckIndex = () => {
-    setIndex((prevIndex) => {return prevIndex + 1});
-    if(index >= props.gameLength){
-        
+  const recordsRef = collection(db, "records");
+  const addRecord = async () => {
+    try {
+      await addDoc(recordsRef, { maxScore: props.gameLength, score: score, user: auth.currentUser.uid, date: serverTimestamp() })
+    } catch (error) {
+      console.error(error)
     }
   }
-  
+
+  const increaseAndCheckIndex = () => {
+    setIndex((prevIndex) => { return prevIndex + 1 });
+    if (index === props.gameLength - 1) {
+      addRecord()
+      setHasEnded(true)
+    }
+  }
+
+  const backToStartHandler = () => {
+    props.backToStart()
+  }
+
+
+
 
 
   return (
     <div className={style.gameDiv}>
-      {questions[index] && <h2>{questions[index].question}</h2>}
-      {props.gameLength}
-      <div className={style.answers}>
-        {questions[index] && <button onClick={() => {checkAnswer(questions[index].ans1)}}>{questions[index].ans1}</button>}
-        {questions[index] && <button onClick={() => {checkAnswer(questions[index].ans2)}}>{questions[index].ans2}</button>}
-        {questions[index] && <button onClick={() => {checkAnswer(questions[index].ans3)}}>{questions[index].ans3}</button>}
-        {questions[index] && <button onClick={() => {checkAnswer(questions[index].ans4)}}>{questions[index].ans4}</button>}
-      </div>
-      {score}
+      {!hasEnded ? <Game question={questions[index]} index={index} length={props.gameLength} checkAnswer={checkAnswer} /> : <GameEnd backToStart={backToStartHandler} score={score} />}
     </div>
   );
 };

@@ -1,0 +1,20 @@
+.end > button{
+    width: 8rem;
+    height: 3rem;
+    font-size: large;
+    border-radius: 30px;
+    outline: none;
+    background-color: white;
+    border-color: blueviolet;
+    color: blueviolet;
+    font-weight: bolder;
+    box-shadow: 2px 2px 2px blueviolet;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.end > button:hover{
+    border-color: white;
+    background-color: blueviolet;
+    color: white;
+}

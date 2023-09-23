@@ -1,0 +1,25 @@
+.game > h2{
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.game > button{
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    width: 10rem;
+    height: 3rem;
+    font-size: medium;
+    background-color: white;
+    border-color: rgba(137, 43, 226, 0.411);
+    color: blueviolet;
+    font-weight: bolder;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px blueviolet;
+}
+
+.game > button:hover{
+    background-color: blueviolet;
+    border-color: white;
+    color: white;
+    box-shadow: 4px 4px 4px blueviolet;
+}
