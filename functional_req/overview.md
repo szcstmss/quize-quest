@@ -1,0 +1,3 @@
+# Áttekintés
+
+Az alkalmazás célja, hogy egy egyszerű felületet nyújtson azoknak akik tudásukat szeretnék tesztelni különböző témakörökben. A felület egy egyszerűbb felelet választós kvíz. Az alkalmazás webes felülettel rendelkezik. A témakörök és kérdések általános tudásra és pop kultúrára helyezik a hangsúlyt. A témakörök véletlenszerű sorrendben vannak sorsolva minden kérdés előtt, a kérdések egy játszmán belül nem ismétlődnek. Lehet választani 8, 16 és 24 kérdéses játszmákból. A felhasználó helyes válaszokért kap pontot, a rossz válaszokért nem jár pont levonás. A játszmák végén a játékos megnézheti, hogy hogyan teljesített önmagához illetve a többi játékoshoz képest.

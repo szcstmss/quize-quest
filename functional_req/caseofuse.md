@@ -1,0 +1,3 @@
+# Forgatókönyvek
+
+Futás közben három szereplő figyelhető meg. Egyik maga a futó webalkalmazás amivel a felhasználó interaktál. Bejelentkezve megnézhezi a ranglistát, kiválaszthatja hány kérdéses játszmát akar játszani és elindíthatja a tesztet. Második maga a felhasználó aki a felülettel interaktál, használja az alkalmazást. Harmadik a web-service ami a tesztekhez szükséges adatokat biztosítja az alakalmazásnak, felhasználó autentikálását biztosítja és adatbázis hozzáférést biztosít az adatok tárolásához.
